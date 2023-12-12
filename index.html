@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SImple Calculator</title>
+    <style>
+        #main{
+            width: 300px; height: 280px; background-color: black;
+        }
+        input{ width: 20%; height: 40px; font-size: 20px; margin: 5px;}
+        #class{ width: 96%; background-color: silver;}
+    </style>
+</head>
+<body>
+    
+
+    <div id="main">
+          <form name="form">
+              <input type="text" name="input" placeholder="0" id="class"><br>
+              <input type="button" value="1" onclick="form.input.value +=1">
+              <input type="button" value="2" onclick="form.input.value +=2">
+              <input type="button" value="3" onclick="form.input.value +=3">
+              <input type="button" value="+" onclick="add()">
+              <br>
+        
+              <input type="button" value="4" onclick="form.input.value +=4">
+              <input type="button" value="5" onclick="form.input.value +=5">
+              <input type="button" value="6" onclick="form.input.value +=6">
+              <input type="button" value="-" onclick="sub()">
+              <br>
+
+              <input type="button" value="7" onclick="form.input.value +=7">
+              <input type="button" value="8" onclick="form.input.value +=8">
+              <input type="button" value="9" onclick="form.input.value +=9">
+              <input type="button" value="/" onclick="divi()">
+              <br>
+
+              <input type="button" value="c" onclick="form.input.value =''">
+              <input type="button" value="0" onclick="form.input.value +=0">
+              <input type="button" value="=" onclick="form.input.value =eval(form.input.value)">
+              <input type="button" value="x" onclick="mult()">
+              <br>
+          </form>
+    </div>
+
+    <script>
+
+        function add()
+        {
+            //ini... variables to zero
+            var act = 0, b = 0;
+
+            //store the values inputedby the user
+            act = form.input.value;
+
+            //store the operator
+            b = act.charAt(act.length - 1);
+            //check which operator was entered
+            if(b == '+' || b == '-' || b == '/' || b == '*'){
+                form.input.value = act.substring(0, act.length - 1);
+                form.input.value += '+';
+            }else{
+                form.input.value += '+';
+            }
+        }
+
+        function sub()
+        {
+            var act = 0, b = 0;
+            act = form.input.value;
+            b = act.charAt(act.length - 1);
+            if(b == '+' || b == '-' || b == '/' || b == '*'){
+                form.input.value = act.substring(0, act.length - 1);
+                form.input.value += '-';
+            }else{
+                form.input.value += '-';
+            }
+        }
+
+        function divi()
+        {
+            var act = 0, b = 0;
+            act = form.input.value;
+            b = act.charAt(act.length - 1);
+            if(b == '+' || b == '-' || b == '/' || b == '*'){
+                form.input.value = act.substring(0, act.length - 1);
+                form.input.value += '/';
+            }else{
+                form.input.value += '/';
+            }
+        }
+
+        function mult()
+        {
+            var act = 0, b = 0;
+            act = form.input.value;
+            b = act.charAt(act.length - 1);
+            if(b == '+' || b == '-' || b == '/' || b == '*'){
+                form.input.value = act.substring(0, act.length - 1);
+                form.input.value += '*';
+            }else{
+                form.input.value += '*';
+            }
+        }
+    </script>
+</body>
+</html>
